@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <EditText
+            android:id="@+id/query_string"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:lines="1"
+            android:hint="enter here!!"
+            android:textColorHint="#FFFFFF"
+            android:focusable="true"
+            android:maxLines="1"
+            android:gravity="center"
+            android:imeOptions="actionSearch"
+            android:textSize="20dp"
+            android:textColor="#FFFFFF"
+            android:singleLine="true"/>
+
+        <ImageView
+            android:id="@+id/search_icon"
+            android:src="@drawable/svg_search_entry_icon"
+            android:padding="4dp"
+            android:layout_gravity="center"
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+
+    </LinearLayout>
+
+    <com.aspsine.swipetoloadlayout.SwipeToLoadLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.isaac.m17.widget.RefreshHeaderView
+            android:id="@+id/swipe_refresh_header"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/swipe_target"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.isaac.m17.widget.LoadMoreFooterView
+            android:id="@+id/swipe_load_more_footer"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+    </com.aspsine.swipetoloadlayout.SwipeToLoadLayout>
+
+</LinearLayout>
